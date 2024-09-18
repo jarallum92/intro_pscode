@@ -3,38 +3,26 @@
 # ------------------------------------------------- #
 
 START 
-    Explain game
-        "Rules: The computer chooses a random number between 1 and 10, and the player has 3 chances to guess. If player guesses correctly within 3 attmepts,
-         they will have option to play again. 
-        If player does not guess within 3 attempts they will have option to play again."
-        "Would Player like to play game YES/NO."
-            (If YES, start game,
-            Else, close the application)
+    Explain game:
+        "Rules: The computer chooses a random number between 1 and 10. The player has 3 chances to guess. If the player guesses correctly within 3 attempts, 
+         they will have the option to play again. 
+         If the player does not guess within 3 attempts, they will also have the option to play again."
+        Ask: "Would you like to play the game? YES/NO."
+            If YES, start game
+            Else, close the application
 
-
-GAME STARTS
-       Computer randomly selects secret number
-        Player will guess and type in their first guess,
-            If player correctly guesses
-                    "WELL DONE!!! Start again. YES/NO"
-                        (If YES, start game again
-                            Else close the game)
-            Else "Wrong guess, try again"
-
-         Computer randomly selects secret number
-        Player will guess and type in their second guess,
-            If player correctly guesses
-                    "WELL DONE!!! Start again. YES/NO"
-                        (If YES, start game again
-                            Else close the game)
-            Else "Wrong guess, try again"  
-
-        Computer randomly selects secret number
-        Player will guess and type in their third/final guess,
-            If player correctly guesses
-                    "WELL DONE!!! Start again. YES/NO"
-                        (If YES, start game again
-                            Else close the game)
-                            (Else "WRONG, The answer was "X". Would you like to start again? YES/NO
-                                If YES then the game will start again                   
-                                    Else close the application)
+GAME STARTS:
+    Computer randomly selects a secret number between 1 and 10
+    FOR 3 attempts:
+        Player guesses
+        IF guess is correct:
+            "WELL DONE!!! Would you like to play again? YES/NO"
+            If YES, start game again
+            Else, close the application
+        ELSE:
+            "Wrong guess, try again"
+    
+    IF all 3 guesses are wrong:
+        "WRONG, The correct answer was X. Would you like to play again? YES/NO"
+        If YES, start game again
+        Else, close the application
