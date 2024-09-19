@@ -2,3 +2,36 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+START
+
+// Define starting position
+Grid size_Rows(X) = 20
+Grid size_Columns(Y) =20
+
+start_row = INPUT "Enter your starting row:(0-19) "
+start_col = INPUT "Enter your starting column:(0-19) "
+customer_position = (start_row, start_col)
+
+// Define destination position
+dest_row = INPUT "Enter the destination row: "
+dest_col = INPUT "Enter the destination column: "
+destination = (dest_row, dest_col)
+
+// Main loop to guide the customer
+WHILE customer_position != destination:
+    PRINT "Your current position: ", customer_position
+    direction = INPUT "Enter direction (north, south, east, west): "
+
+    // Move the customer based on direction
+    IF direction == "north":
+        customer_position.row -= 1
+    ELSE IF direction == "south":
+        customer_position.row += 1
+    ELSE IF direction == "west":
+        customer_position.col -= 1
+    ELSE IF direction == "east":
+        customer_position.col += 1
+
+PRINT "You have reached your destination!"
+
+END
