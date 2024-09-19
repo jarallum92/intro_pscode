@@ -2,3 +2,31 @@
 # Add your pseudocode to this file below this line: #
 # ------------------------------------------------- #
 
+BEGIN
+
+  SET total_products_per_case TO 50
+  SET packages_per_scan TO 2
+
+  SET case_number TO 1
+
+  WHILE True
+    SET scanned_packages TO 0
+    
+    WHILE scanned_packages < total_products_per_case
+      INCREASE scanned_packages BY packages_per_scan
+      PRINT "Case " + case_number + ": Scanned packages = " + scanned_packages
+      
+    END WHILE
+    
+    PRINT "Case " + case_number + " is full with " + scanned_packages + " packages."
+    
+    ASK user IF they want to continue with the next case (yes/no)
+    IF user_input IS "no"
+      BREAK
+
+    INCREASE case_number BY 1
+
+  END WHILE
+
+END
+
